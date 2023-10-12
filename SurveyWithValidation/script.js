@@ -1,3 +1,13 @@
+function validateEmail(email) {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+}
+function validatePhoneNumber(mobile) {
+  const phonePattern = /^\d{10}$/; // This pattern checks for 10 digits (change as needed for your use case)
+  return phonePattern.test(mobile);
+}
+
+
 function submitForm() {
     // Get form values
     const firstName = document.getElementById("first-name").value;
@@ -24,6 +34,16 @@ function submitForm() {
         return;
     }
 
+    if (!validateEmail(email)) {
+      alert("Please enter valid email.");
+      return;
+    }
+    if (!validatePhoneNumber(mobile)) {
+      alert("Please enter valid number.");
+      return;
+    }
+
+
     // Display results in a popup
     const resultDiv = document.getElementById("result");
     resultDiv.innerHTML = `
@@ -35,6 +55,8 @@ function submitForm() {
         <p>Profession: ${profession}</p>
         <p>Email: ${email}</p>
         <p>Mobile Number: ${mobile}</p>
+        <p>ValidateEmail: ${validateEmail(email)}</p>
+        <p>ValidatePhoneNumber: ${validatePhoneNumber(mobile)}</p>
     `;
     const popup = document.getElementById("popup");
     popup.style.display = "block";
