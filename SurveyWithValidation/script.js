@@ -3,7 +3,7 @@ function validateEmail(email) {
     return emailPattern.test(email);
 }
 function validatePhoneNumber(mobile) {
-  const phonePattern = /^\d{10}$/; // This pattern checks for 10 digits (change as needed for your use case)
+  const phonePattern = /^\d{10}$/;
   return phonePattern.test(mobile);
 }
 
