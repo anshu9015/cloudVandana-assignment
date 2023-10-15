@@ -14,4 +14,4 @@ function reverseString(word) {
 
 let inputSentence = "This is a sunny day";
 let reversed = reverseWords(inputSentence);
-console.log(reversed);
+console.log(reversed); //reverse the sentence with word wise
